@@ -1,49 +1,89 @@
-body 
-{
-	height: 100vh;
-	display: flex;
-	font-family: 'Lato', sans-serif;
-	animation: bgchange 20s infinite;
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-user-select:none;  
+    -moz-user-select:none;     
+    -ms-user-select:none;
+    user-select: none;
+    /* Cursor Personalizado */
+    cursor: url(cur/8-BitHeartNormal.cur), default;
+    transition: all .2s;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato', sans-serif;
+    animation: bgchange 20s infinite;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
 }
 
 @keyframes bgchange {
-	0% { background-color: #272727 }
+    0% {
+        background-color: #a30088
+    }
 
-	20% { background-color: rgb(180, 0, 0) }
+    20% {
+        background-color: rgb(180, 0, 0)
+    }
 
-	40% { background-color: rgb(255, 217, 0) }
+    40% {
+        background-color: rgb(255, 217, 0)
+    }
 
-	60% { background-color: rgb(0, 116, 6) }
+    60% {
+        background-color: rgb(0, 116, 6)
+    }
 
-	80% { background-color: rgb(24, 0, 133) }
+    80% {
+        background-color: rgb(24, 0, 133)
+    }
 
-	100% { background-color: #a30088 }
+    100% {
+        background-color: #a30088
+    }
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
 }
-  
+
 button {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
+    font-size: 16px;
+    font-weight: bold;
     width: 100px;
     height: 35px;
-    border-radius: 5px;
+    border-radius: 20px;
+    border: solid 3px transparent;
 }
-  
+
 .hidden {
-    display:none;
+    display: none;
     position: absolute;
 }
-  
+
 #change {
     margin-left: 10px;
 }
 
 #change:hover {
-    cursor:pointer;
+    /* cursor: default; */
+    border: solid white;
+    background-color: rgb(200, 0, 0);
+}
+
+/* Imagem */
+img {
+    height: 40%;
+    visibility: hidden;
+}
+
+.show {
+    visibility: visible;
 }

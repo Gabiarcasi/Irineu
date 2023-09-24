@@ -1,34 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Gabriela Araújo (Gabi Arcasi)">
-    <meta name="descripition" content="Fundo fica mudando de cor, com transição leve">
-    <link rel="stylesheet" href="style.css">
-    <title>????</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Gabriela Araújo (Gabi Arcasi)">
+  <meta name="descripition" content="Fundo fica mudando de cor, com transição leve">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="img/favicon.ico">
+  <title>????</title>
 </head>
+
 <body>
-    <h1> Quer Casar Comigo? </h1>
-    <button id="change"> Não </button>
-    <button class="hidden" id="move"> Não </button>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script>
-    $("#change").click(function() {
-        $("#change").html("Sim");
-        $("#move").show();
-      });
-      
-      $("#move").hover(function() {
-        change();
-      });
-      
-      function change()
-      {
-          var i = Math.floor(Math.random()*500)+1;
-          var j = Math.floor(Math.random()*100)+1;
-          $("#move").css({top: j+'px',left: i+'px'});
+  <h1> Quer Casar Comigo? </h1>
+  <div class="btnBox">
+    <button class="btn" id="change" value="não" onclick="show_image()">Sim</button>
+    <button class="btn" id="move">Não</button>
+  </div>
+  <img class="img_cat" id="img_cat" src="img/catlove.gif" alt="" srcset="">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+  <script>
+
+    $("#move").hover(function () {
+      change();
+    });
+    
+    function change() {
+      document.getElementById("move").style.position = "absolute";
+      var i = Math.floor(Math.random() * 500) + 1;
+      var j = Math.floor(Math.random() * 100) + 1;
+      $("#move").css({ top: j + 'px', left: i + 'px' });
+    }
+
+    // Função para exibir um gif quando o botão Sim é pressionado
+    function show_image() {
+      const imagem = document.getElementById("img_cat");
+
+      // Verifica se a imagem está visível
+      if (imagem.style.visibility = "hidden") {
+        imagem.style.visibility = "visible";
+      } else {
+        imagem.style.visibility = "hidden";
       }
-    </script>
+    }
+  </script>
 </body>
+
 </html>
